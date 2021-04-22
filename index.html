@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>New Tab</title>
+</head>
+<body>
+    <h1 class="heading">Change Website Title</h1>
+    <input type="text" placeholder="Change the text of the tab" id="titleBox">
+    <button type="button" onclick="changeTitle()">Set Title</button>
+
+    <script>
+        function changeTitle() {
+          let inputVal = document.getElementById("titleBox").value;
+
+          document.title = inputVal
+        }
+
+        document.getElementById('titleBox').onkeypress = function(e){
+            if (!e) e = window.event;
+            var keyCode = e.code || e.key;
+            if (keyCode == 'Enter'){
+                changeTitle()
+                return false
+            }
+        }
+    </script>
+</body>
+</html>
